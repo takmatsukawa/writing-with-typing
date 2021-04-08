@@ -1,15 +1,13 @@
 <template>
   <div class="px-5 py-10">
-    <h1 class="text-2xl uppercase">Blog introductions</h1>
+    <h1 class="text-2xl uppercase">{{ title }}</h1>
     <section v-for="(textSet, i) in texts" :key="textSet.id" class="mt-5">
       <p>
-        <span
-          v-for="(word, j) in wordList[i]"
-          :key="j"
-          :class="wordState(i, j)"
-        >
-          {{ word }}&nbsp;
-        </span>
+        <template v-for="(word, j) in wordList[i]" :key="j">
+          <span :class="wordState(i, j)">
+            {{ word }} </span
+          >&nbsp;
+        </template>
       </p>
       <p class="text-gray-800 mt-5">{{ textSet.native }}</p>
       <textarea
@@ -27,7 +25,7 @@ import { useTextSets } from "./composables/useTextSets";
 export default defineComponent({
   name: "App",
   setup() {
-    const { texts } = useTextSets();
+    const { title, texts } = useTextSets();
     const wordList = computed(() =>
       texts.value.map((textSet) => textSet.target.split(" "))
     );
@@ -50,14 +48,28 @@ export default defineComponent({
       inputWordList.value[i][j].length &&
       wordList.value[i][j] !== inputWordList.value[i][j];
 
+    const someOfItIsCorrect = (i: number, j: number) =>
+      isMismatch(i, j) &&
+      wordList.value[i][j].includes(inputWordList.value[i][j]);
+
+    const notYetInput = (i: number, j: number) =>
+      !wordList.value[i] ||
+      !inputWordList.value[i] ||
+      !wordList.value[i][j] ||
+      !inputWordList.value[i][j] ||
+      !wordList.value[i][j].length ||
+      !inputWordList.value[i][j].length;
+
     const wordState = (i: number, j: number) => ({
       "text-green-600": isMatch(i, j),
       "text-red-600": isMismatch(i, j),
+      underline: isMismatch(i, j) && !someOfItIsCorrect(i, j),
       "text-black": true,
-      "text-opacity-10": !isMatch(i, j),
+      "text-opacity-10":
+        notYetInput(i, j) || (!isMatch(i, j) && someOfItIsCorrect(i, j)),
     });
 
-    return { texts, inputs, wordList, inputWordList, isMatch, wordState };
+    return { title, texts, inputs, wordList, inputWordList, wordState };
   },
 });
 </script>

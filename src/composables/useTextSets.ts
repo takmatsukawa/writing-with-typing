@@ -7,8 +7,10 @@ type TextSet = {
 };
 
 export const useTextSets = () => {
+  const title = ref<string>();
   const texts = ref<TextSet[]>([]);
 
+  title.value = "Blog introductions";
   texts.value = [
     {
       id: "1",
@@ -19,5 +21,5 @@ export const useTextSets = () => {
     },
   ];
 
-  return { texts };
+  return { title, texts };
 };
