@@ -4,15 +4,22 @@
     <section v-for="(textSet, i) in texts" :key="textSet.id" class="mt-5">
       <p>
         <template v-for="(word, j) in wordList[i]" :key="j">
-          <span :class="wordState(i, j)">
-            {{ word }} </span
+          <span :class="wordState(i, j)">{{ word }}</span
           >&nbsp;
         </template>
+
+        <check-circle
+          v-if="complete(i)"
+          class="inline-block text-green-600"
+          title="clear"
+          :size="15"
+          decorative
+        />
       </p>
       <p class="text-gray-800 mt-5">{{ textSet.native }}</p>
       <textarea
         v-model="inputs[i]"
-        class="px-2 py-1 shadow-sm mt-1 block w-full border border-gray-300 rounded-md focus:outline-none focus:ring sm:text-sm"
+        class="mt-2 px-2 py-1 shadow-sm mt-1 block w-full border border-gray-300 rounded-md focus:outline-none focus:ring sm:text-sm"
       ></textarea>
     </section>
   </div>
@@ -69,7 +76,17 @@ export default defineComponent({
         notYetInput(i, j) || (!isMatch(i, j) && someOfItIsCorrect(i, j)),
     });
 
-    return { title, texts, inputs, wordList, inputWordList, wordState };
+    const complete = (i: number) => texts.value[i].target === inputs.value[i];
+
+    return {
+      title,
+      texts,
+      inputs,
+      wordList,
+      inputWordList,
+      wordState,
+      complete,
+    };
   },
 });
 </script>
