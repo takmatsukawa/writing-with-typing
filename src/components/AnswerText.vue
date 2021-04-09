@@ -25,10 +25,13 @@ export default defineComponent({
       return this.answer.split(" ");
     },
     inputWordList(): string[] {
-      return this.input.split(" ");
+      return this.input
+        .trim()
+        .split(" ")
+        .map((w) => w.trim());
     },
     complete(): boolean {
-      return this.answer == this.input;
+      return this.answer == this.input.trim();
     },
   },
   render() {
@@ -64,5 +67,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped></style>

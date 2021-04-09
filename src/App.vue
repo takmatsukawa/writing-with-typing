@@ -6,7 +6,7 @@
       <p class="text-gray-800 mt-5">{{ textSet.native }}</p>
       <textarea
         v-model="inputs[i]"
-        class="mt-2 px-2 py-1 shadow-sm mt-1 block w-full border border-gray-300 rounded-md focus:outline-none focus:ring sm:text-sm"
+        class="mt-2 px-2 py-1 shadow-sm block w-full border border-gray-300 rounded-md focus:outline-none focus:ring sm:text-sm"
       ></textarea>
     </section>
   </div>
