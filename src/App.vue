@@ -1,5 +1,5 @@
 <template>
-  <div class="px-5 py-10">
+  <div class="max-w-prose mx-auto py-10">
     <router-view></router-view>
   </div>
 </template>

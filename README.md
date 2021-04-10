@@ -1,4 +1,4 @@
-# Writing with typing
+# Writing training for English learner
 
 英語ライティングの練習用アプリケーション 試作版です。
 
