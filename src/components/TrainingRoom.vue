@@ -6,7 +6,7 @@
   <div class="mt-5 space-y-10">
     <section v-for="(textSet, i) in texts" :key="textSet.id">
       <answer-text :answer="textSet.target" :input="inputs[i]"></answer-text>
-      <p class="text-gray-800 mt-5">{{ textSet.native }}</p>
+      <markdown :source="textSet.native" class="text-gray-800 mt-5 prose" />
       <textarea
         :ref="
           (el) => {
@@ -23,12 +23,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  ref,
-  computed,
-  nextTick,
-} from "vue";
+import { defineComponent, ref, computed, nextTick } from "vue";
 import { useTextSets } from "../composables/useTextSets";
 import AnswerText from "../components/AnswerText.vue";
 

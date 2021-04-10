@@ -21,8 +21,8 @@ export const useTextSets = () => {
       textSets: [
         {
           id: "1",
-          native:
-            "JavaScriptは、世界で最もクールな言語の一つであることは間違いなく、日に日に人気が高まっています。そのため、開発者コミュニティは、JSを使い続けてきた結果、いくつかのコツやヒントを見つけてきました。今日は、その中から11のヒントをご紹介します。",
+          native: `JavaScriptは、世界で最もクールな言語の一つであることは間違いなく、日に日に人気が高まっています。そのため、開発者コミュニティは、JSを使い続けてきた結果、いくつかのコツやヒントを見つけてきました。今日は、その中から11のヒントをご紹介します。  
+[8 JavaScript Tips & Tricks That No One Teaches 🚀](https://dev.to/garvitmotwani/8-javascript-tips-tricks-that-no-one-teaches-24g1)`,
           target:
             "JavaScript is no doubt one of the coolest languages in the world and is gaining more and more popularity day by day. So the developer community has found some tricks and tips after using JS for quite a while now. Today I will share 11 Tips & Tricks With You!",
         },
@@ -35,7 +35,7 @@ export const useTextSets = () => {
         {
           id: "2",
           native: "こんにちは",
-          target: "Hello",
+          target: "Hello.",
         },
         {
           id: "3",
