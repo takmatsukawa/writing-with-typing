@@ -16,6 +16,11 @@ export const useTextSets = () => {
   const packages = ref<Package[]>([]);
   packages.value = [
     {
+      id: "2",
+      title: "Blog Title",
+      textSets: [],
+    },
+    {
       id: "1",
       title: "Blog introductions",
       textSets: [

@@ -4,6 +4,7 @@
   >
   <h1 class="text-2xl uppercase">{{ title }}</h1>
   <div class="mt-5 space-y-10">
+    <p v-if="!texts.length" class="text-gray-800">This package is empty.</p>
     <section v-for="(textSet, i) in texts" :key="textSet.id">
       <answer-text :answer="textSet.target" :input="inputs[i]"></answer-text>
       <markdown :source="textSet.native" class="text-gray-800 mt-5 prose" />
@@ -65,8 +66,8 @@ export default defineComponent({
     };
 
     return {
-      title: pack.value?.title,
-      texts: pack.value?.textSets,
+      title: pack.value ? pack.value.title : "",
+      texts: pack.value ? pack.value.textSets : [],
       inputs,
       heights,
       textareas,

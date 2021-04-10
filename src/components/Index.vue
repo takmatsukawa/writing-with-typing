@@ -1,7 +1,9 @@
 <template>
   <main>
-    <h1 class="text-2xl">Writing training for English learner</h1>
-    <div class="flex mt-8 space-x-4">
+    <h1 class="text-4xl">Writing training for English learner</h1>
+    <div
+      class="flex mt-8 flex-col space-y-2 md:flex-row md:space-x-4 md:space-y-0"
+    >
       <router-link
         v-for="pack in packages"
         :key="pack.id"
