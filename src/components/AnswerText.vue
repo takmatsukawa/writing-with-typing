@@ -25,10 +25,7 @@ export default defineComponent({
       return this.answer.split(" ");
     },
     inputWordList(): string[] {
-      return this.input
-        .trim()
-        .split(" ")
-        .map((w) => w.trim());
+      return this.input.trim().split(" ");
     },
     complete(): boolean {
       return this.answer == this.input.trim();
