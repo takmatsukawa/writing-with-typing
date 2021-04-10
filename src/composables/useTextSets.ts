@@ -33,9 +33,14 @@ export const useTextSets = () => {
       title: "Test package",
       textSets: [
         {
-          id: "1",
+          id: "2",
           native: "こんにちは",
           target: "Hello",
+        },
+        {
+          id: "3",
+          native: "調子はどう？",
+          target: "How is it going?",
         },
       ],
     },

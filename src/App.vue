@@ -1,20 +1,13 @@
 <template>
   <div class="px-5 py-10">
-    <training-room />
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import TrainingRoom from "./components/TrainingRoom.vue";
 
-export default defineComponent({
-  name: "App",
-  setup() {},
-  components: {
-    TrainingRoom,
-  },
-});
+export default defineComponent({});
 </script>
 
 <style scoped></style>
