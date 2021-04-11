@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1 class="text-4xl">Writing Training for English Learner</h1>
+    <h1 class="text-4xl font-bold">Writing Training for English Learner</h1>
     <div
       class="flex mt-8 flex-col space-y-2 md:flex-row md:space-x-4 md:space-y-0"
     >
