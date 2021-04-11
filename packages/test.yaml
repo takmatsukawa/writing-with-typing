@@ -1,7 +1,8 @@
 id: test
-title: Test Package
+title: _Test Package
 textSets:
   - id: 1
+    confident: true
     native: こんにちは
     target: Hello.
   - id: 2

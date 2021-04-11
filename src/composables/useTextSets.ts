@@ -9,6 +9,7 @@ type Package = {
 
 type TextSet = {
   id: string;
+  confident?: boolean;
   native: string;
   target: string;
 };

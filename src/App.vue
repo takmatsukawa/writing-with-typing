@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-prose mx-5 py-10 md:mx-auto">
+  <div class="max-w-prose mx-5 pt-10 pb-80 md:mx-auto">
     <router-view></router-view>
   </div>
 </template>
