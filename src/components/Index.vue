@@ -1,8 +1,15 @@
 <template>
-  <main>
-    <h1 class="text-4xl font-bold">Writing Training for English Learner</h1>
-    <div
-      class="flex mt-8 flex-col space-y-2 md:flex-row md:space-x-4 md:space-y-0"
+  <div class="pb-10">
+    <header class="bg-gray-50 border-b">
+      <span
+        class="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-green-500 text-white text-xl"
+      >
+        <alphabetical-variant-icon class="inline-block mr-1" decorative />
+        Writing Training for English Learner
+      </span>
+    </header>
+    <main
+      class="max-w-prose mx-5 md:mx-auto flex mt-16 flex-col space-y-2 md:flex-row md:space-x-4 md:space-y-0"
     >
       <p v-if="!packages.length" class="text-gray-800">There is no package!</p>
       <router-link
@@ -12,8 +19,8 @@
         class="border block px-8 py-5 rounded hover:border-gray-300"
         >{{ pack.title }} ({{ pack.textSets.length }})</router-link
       >
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
 <script lang="ts">
