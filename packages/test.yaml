@@ -1,0 +1,9 @@
+id: test
+title: Test Package
+textSets:
+  - id: 1
+    native: こんにちは
+    target: Hello.
+  - id: 2
+    native: 調子はどう？
+    target: How is it going?
