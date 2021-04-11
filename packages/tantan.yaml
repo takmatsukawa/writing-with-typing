@@ -1,0 +1,21 @@
+id: tantan
+title: 短文音読で覚える英単語 タンタン 中学英語やり直し編
+textSets:
+  - id: 1
+    target:
+      Hello. My name is Ryo Honda. I'm from Tokyo, Japan. This is my first visit to America.
+      I'm a big soccer fan. Thank you.
+    native: こんにちは。私の名前は本田リョウです。日本の東京出身です。今回が初めてのアメリカ訪問です。大のサッカーファンです。ありがとうございます。
+  - id: 2
+    target: Excuse me. Are you Mary from Australia? I'm Ken. Nice to meet you.
+      And welcome to Japan. This is my mother. And my father is in our car over there.
+    native:
+      すみません。あなたはオーストラリアから来たメアリーですか？僕はケンです。初めまして。
+      そして日本へようこそ。こちらは私の母です。そして父はあそこの車の中にいます。
+  - id: 3
+    target: This is my brother, Taro. He is a fasion designer.
+      His son is a junior high school student.
+      My sister, Mari, is not in Japan. She is a college student in Paris, France.
+    native: こちらが私の兄のタロウです。彼はファッション・デザイナーです。
+      彼の息子は中学生です。
+      私の妹のマリは、日本にいません。彼女はフランスのパリの大学生です。
