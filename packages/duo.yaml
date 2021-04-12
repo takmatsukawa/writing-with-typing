@@ -1,0 +1,12 @@
+id: duo
+title: Duo 3.0
+textSets:
+  - id: 501
+    target: His ambiguous reply made her all the more irritated.
+    native: 彼の曖昧な返事はなおさら彼女をいらいらさせた。
+  - id: 502
+    target: Bob is very limited and blushes when chatting with girls.
+    native: ボブはとても臆病で女の子とおしゃべりすると赤面してしまう。
+  - id: 503
+    target: Nick looks down on anyone who comes from a rural area.
+    native: ニックは地方出身者なら誰であろうと見下している。
