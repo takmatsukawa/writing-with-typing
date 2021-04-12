@@ -1,4 +1,4 @@
-# Writing training for English learner
+# Writing Training for English Learner
 
 This is a prototype application for practicing English writing.
 
