@@ -1,11 +1,12 @@
 <script lang="ts">
 import { defineComponent, h, resolveComponent } from "vue";
 
-const isMatch = (a: string, b: string) => a == b;
+const s = (s: string) => s.replaceAll(/’/g, "'");
+const isMatch = (a: string, b: string) => s(a) == s(b);
 const isMismatch = (a: string, b: string) =>
-  a && b && a.length && b.length && a != b;
+  a && b && a.length && b.length && s(a) != s(b);
 const someOfItIsCorrect = (a: string, b: string) =>
-  isMismatch(a, b) && a.includes(b);
+  isMismatch(a, b) && s(a).includes(s(b));
 const notYetInput = (a: string, b: string) =>
   !a || !b || !a.length || !b.length;
 
