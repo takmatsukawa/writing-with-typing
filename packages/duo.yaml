@@ -1,6 +1,12 @@
 id: duo
 title: Duo 3.0
 textSets:
+  - id: 15
+    target: |
+      "Are you familiar with contemporary literature?"
+      "I know next to nothing about it."
+    native: 「現代文学に詳しいですか？」
+      「ほとんど知りません。」
   - id: 501
     target: His ambiguous reply made her all the more irritated.
     native: 彼の曖昧な返事はなおさら彼女をいらいらさせた。

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, h, resolveComponent } from "vue";
 
-const s = (s: string) => s.replaceAll(/’/g, "'");
+const s = (s: string) => s.replaceAll(/’/g, "'").replaceAll(/\s/g, " ");
 const isMatch = (a: string, b: string) => s(a) == s(b);
 const isMismatch = (a: string, b: string) =>
   a && b && a.length && b.length && s(a) != s(b);
@@ -23,13 +23,13 @@ export default defineComponent({
   },
   computed: {
     wordList(): string[] {
-      return this.answer.split(" ");
+      return this.answer.trim().split(/\s/);
     },
     inputWordList(): string[] {
-      return this.input.trim().split(" ");
+      return this.input.trim().split(/\s/);
     },
     complete(): boolean {
-      return this.answer == this.input.trim();
+      return s(this.answer.trim()) == s(this.input.trim());
     },
   },
   render() {
