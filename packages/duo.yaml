@@ -7,12 +7,40 @@ textSets:
       "I know next to nothing about it."
     native: 「現代文学に詳しいですか？」
       「ほとんど知りません。」
-  - id: 501
-    target: His ambiguous reply made her all the more irritated.
-    native: 彼の曖昧な返事はなおさら彼女をいらいらさせた。
-  - id: 502
-    target: Bob is very limited and blushes when chatting with girls.
-    native: ボブはとても臆病で女の子とおしゃべりすると赤面してしまう。
-  - id: 503
-    target: Nick looks down on anyone who comes from a rural area.
-    native: ニックは地方出身者なら誰であろうと見下している。
+  - id: 23
+    target: |
+      "I'm apt to buy things on impulse whenever something is on sale."
+      "So am I."
+    native: 「安売りしているといつも衝動買いしてしまうたちです。」「私も。」
+  - id: 24
+    target: As it is, ordinary people cannot afford to purchase such luxuries.
+    native: 実際のところ、普通の人々にはそんな贅沢品を購入する余裕はない。
+  - id: 26
+    target: I have to cut down on my expenses, so from now on, I'm going to keep track of them on a daily basis.
+    native: 出費を切り詰めないと。だから、これからは使ったお金は一日単位で記録してくつもりだ。
+  - id: 29
+    target: The president announced a concrete plan to carry out welfare reform.
+    native: 大統領は福祉改革を実行するための具体的な計画を発表した。
+  - id: 40
+    target: For years the press overlooked the problem. But now, if anything, they are making too much of it.
+    native: 過去数年間その問題を見過ごしていた報道機関が、今ではどちらかと言えばそのことを重視し過ぎている。
+  - id: 44
+    target: I'll write it down just in case, because I have a bad memory.
+    native: 念のためにメモしておきます。記憶力が悪いから。
+  - id: 47
+    target: So far, no less than 200 people have died of the flu epidemic.
+    native: インフルエンザの流行で、現在までに200人もの人が亡くなっている。
+  - id: 50
+    target: My grandma strained her back when she bent down to hub my son.
+    native: うちの息子を抱こうとして屈んだ時に、おばあちゃんは腰を痛めた。
+  - id: 51
+    target: If you have a stiff neck, try an herbal remedy.
+    native: 肩が凝るなら、薬草治療を試してごらんよ。
+  - id: 61
+    target: Little by little, my son-in-low is recovering from stomach cancer, and now he is in good spirits.
+    native: 私の娘婿は徐々に胃癌を克服しつつあり、今は明るく元気だ。
+  - id: 68
+    target: |
+      "It's on me."
+      "No. You treat me every time we eat out." "Well, okay. Let's split the check then."
+    native: 「これは僕のおごり。」「だめよ。外食のときはいつもおごってもらっているし。」「うーん、わかった。じゃあ割り勘にしよう。」
