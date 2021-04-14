@@ -1,7 +1,20 @@
 <script lang="ts">
 import { defineComponent, h, resolveComponent } from "vue";
 
-const s = (s: string) => s.replaceAll(/’/g, "'").replaceAll(/\s/g, " ");
+const s = (s: string) => {
+  let result = s;
+  const replaceMap = new Map();
+  replaceMap.set("’", "'");
+  replaceMap.set(/‘|’/g, "'");
+  replaceMap.set(/“|”/g, '"');
+  replaceMap.set(/\s/g, " ");
+
+  replaceMap.forEach((newString, old) => {
+    result = result.replaceAll(old, newString);
+  });
+
+  return result;
+};
 const isMatch = (a: string, b: string) => s(a) == s(b);
 const isMismatch = (a: string, b: string) =>
   a && b && a.length && b.length && s(a) != s(b);
