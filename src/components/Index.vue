@@ -8,10 +8,12 @@
           class="inline-block mr-2 transform -skew-y-6"
           decorative
         />
-        <span class="md:text-xl"> Writing Training for English Learner </span>
+        <span class="font-semibold md:text-xl">
+          Writing Training for English Learner
+        </span>
       </span>
     </header>
-    <main class="max-w-prose mx-5 mt-16 md:mx-auto">
+    <main class="max-w-prose mx-5 mt-10 md:mt-16 md:mx-auto">
       <p v-if="!packages.length" class="text-gray-800">There is no package!</p>
       <div class="grid gap-1 md:grid-cols-3 md:gap-4">
         <router-link
