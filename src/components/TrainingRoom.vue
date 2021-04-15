@@ -3,7 +3,7 @@
     <router-link :to="{ name: 'index' }" class="text-blue-600 underline"
       >Back to index</router-link
     >
-    <h1 class="text-2xl font-semibold">{{ title }}</h1>
+    <h1 class="text-3xl text-gray-700">{{ title }}</h1>
     <div class="mt-5 space-y-10">
       <p v-if="!texts.length" class="text-gray-800">This package is empty.</p>
       <section v-for="(textSet, i) in texts" :key="textSet.id" class="relative">
@@ -102,4 +102,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  font-family: Montserrat, sans-serif;
+}
+</style>
