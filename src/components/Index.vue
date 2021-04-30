@@ -29,12 +29,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted } from "vue";
 import { useTextSets } from "../composables/useTextSets";
 
 export default defineComponent({
   setup() {
-    const { packages } = useTextSets();
+    const { packages, getPackages } = useTextSets();
+
+    onMounted(getPackages);
+
     return { packages };
   },
 });
