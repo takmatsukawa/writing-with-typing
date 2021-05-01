@@ -14,31 +14,39 @@
       </span>
     </header>
     <main class="max-w-prose mx-5 mt-10 md:mt-16 md:mx-auto">
-      <p v-if="!packages.length" class="text-gray-800">There is no package!</p>
-      <div class="grid gap-1 md:grid-cols-3 md:gap-4">
-        <router-link
-          v-for="pack in packages"
-          :key="pack.id"
-          :to="{ name: 'training-room', params: { id: pack.id } }"
-          class="border inline-block px-8 py-5 rounded hover:border-gray-300"
-          >{{ pack.title }} ({{ pack.textSets.length }})</router-link
-        >
-      </div>
+      <template v-if="!isLoading">
+        <p v-if="!packages.length" class="text-gray-800">
+          There is no package!
+        </p>
+        <div class="grid gap-1 md:grid-cols-3 md:gap-4">
+          <router-link
+            v-for="pack in packages"
+            :key="pack.id"
+            :to="{ name: 'training-room', params: { id: pack.id } }"
+            class="border inline-block px-8 py-5 rounded hover:border-gray-300"
+            >{{ pack.title }} ({{ pack.textSets.length }})</router-link
+          >
+        </div>
+      </template>
     </main>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import { useTextSets } from "../composables/useTextSets";
 
 export default defineComponent({
   setup() {
+    const isLoading = ref(true);
     const { packages, getPackages } = useTextSets();
 
-    onMounted(getPackages);
+    onMounted(async () => {
+      await getPackages();
+      isLoading.value = false;
+    });
 
-    return { packages };
+    return { packages, isLoading };
   },
 });
 </script>
