@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Index from "./components/Index.vue";
 import TrainingRoom from "./components/TrainingRoom.vue";
 
-const base = "/writing-with-typing";
+const base = "";
 const routes = [
   { path: base + "/", component: Index, name: "index" },
   {
@@ -14,6 +14,6 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory(),
-  routes, // short for `routes: routes`
+  history: createWebHashHistory(),
+  routes,
 });
