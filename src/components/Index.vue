@@ -33,20 +33,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, onMounted, ref, computed } from "vue";
 import { useTextSets } from "../composables/useTextSets";
 
 export default defineComponent({
   setup() {
     const isLoading = ref(true);
     const { packages, getPackages } = useTextSets();
+    const sorted = computed(() =>
+      packages.value.sort((a, b) =>
+        a.title < b.title ? -1 : a.title > b.title ? 1 : 0
+      )
+    );
 
     onMounted(async () => {
       await getPackages();
       isLoading.value = false;
     });
 
-    return { packages, isLoading };
+    return { packages: sorted, isLoading };
   },
 });
 </script>
