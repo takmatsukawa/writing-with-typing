@@ -4,7 +4,7 @@ import yaml from "@rollup/plugin-yaml";
 import ViteFonts from "vite-plugin-fonts";
 
 export default defineConfig({
-  base: "/writing-with-typing/",
+  base: "/",
   plugins: [
     vue(),
     yaml(),
