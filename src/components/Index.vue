@@ -1,6 +1,6 @@
 <template>
   <div class="pb-10">
-    <header class="bg-gray-50 border-b">
+    <header class="bg-gray-50 border-b flex justify-between">
       <span
         class="flex items-center bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-4 md:inline-flex"
       >
@@ -12,6 +12,7 @@
           Writing Training for English Learner
         </span>
       </span>
+      <signout />
     </header>
     <main class="max-w-prose mx-5 mt-10 md:mt-16 md:mx-auto">
       <template v-if="!isLoading">
@@ -34,6 +35,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref, computed } from "vue";
+import Signout from "./SignOut.vue";
 import { useTextSets } from "../composables/useTextSets";
 
 export default defineComponent({
@@ -53,5 +55,6 @@ export default defineComponent({
 
     return { packages: sorted, isLoading };
   },
+  components: { Signout },
 });
 </script>

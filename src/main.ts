@@ -6,6 +6,10 @@ import "./index.css";
 
 import CheckCircleIcon from "vue3-material-design-icons/CheckCircle.vue";
 import AlphabeticalVariantIcon from "vue3-material-design-icons/AlphabeticalVariant.vue";
+import Amplify, { Auth } from "aws-amplify";
+// @ts-ignore
+import awsconfig from "./aws-exports";
+Amplify.configure(awsconfig);
 
 const app = createApp(App);
 
