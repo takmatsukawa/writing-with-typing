@@ -1,11 +1,16 @@
 import { ref } from "vue";
-import { Auth } from 'aws-amplify';
+import { Auth } from "aws-amplify";
 import { get } from "../fetch";
 const yamls = import.meta.globEager("../../packages/*.yaml");
 
 type Package = {
   id: string;
   title: string;
+  image:
+    | undefined
+    | {
+        url: string;
+      };
   textSets: TextSet[];
 };
 
@@ -31,7 +36,7 @@ export const useTextSets = () => {
   // );
 
   const getPackages = async () => {
-    const user = await Auth.currentAuthenticatedUser()
+    const user = await Auth.currentAuthenticatedUser();
     const pkgs = await get<{ contents: Package[] }>(
       `https://writing-with-typing.microcms.io/api/v1/packages?filters=owner[equals]${user.username}`,
       {

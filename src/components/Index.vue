@@ -24,9 +24,21 @@
             v-for="pack in packages"
             :key="pack.id"
             :to="{ name: 'training-room', params: { id: pack.id } }"
-            class="border inline-block px-8 py-5 rounded hover:border-gray-300"
-            >{{ pack.title }} ({{ pack.textSets.length }})</router-link
+            class="border inline-block px-5 py-5 rounded hover:border-gray-300 text-lg font-semibold text-gray-700"
           >
+            {{ pack.title }}
+            <img
+              v-if="pack.image"
+              class="mt-3 rounded-sm"
+              :src="`${pack.image.url}?fit=crop&w=200&h=135`"
+              :alt="pack.title"
+              width="200"
+              height="200"
+            />
+            <p class="text-gray-600 text-xs font-light mt-2">
+              {{ pack.textSets.length }} sentenses
+            </p>
+          </router-link>
         </div>
       </template>
     </main>
