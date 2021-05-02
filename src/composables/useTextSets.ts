@@ -1,4 +1,5 @@
 import { ref } from "vue";
+import { Auth } from 'aws-amplify';
 import { get } from "../fetch";
 const yamls = import.meta.globEager("../../packages/*.yaml");
 
@@ -30,8 +31,9 @@ export const useTextSets = () => {
   // );
 
   const getPackages = async () => {
+    const user = await Auth.currentAuthenticatedUser()
     const pkgs = await get<{ contents: Package[] }>(
-      "https://writing-with-typing.microcms.io/api/v1/packages",
+      `https://writing-with-typing.microcms.io/api/v1/packages?filters=owner[equals]${user.username}`,
       {
         headers: { "X-API-KEY": "117f3ccd-197e-49cd-89d4-6a4c017e9ce5" },
       }
