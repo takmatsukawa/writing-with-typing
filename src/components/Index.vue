@@ -1,8 +1,10 @@
 <template>
   <div class="pb-10">
-    <header class="bg-gray-50 border-b flex justify-between">
+    <header
+      class="bg-green-600 border-b flex justify-between p-5 md:p-0 md:bg-gray-50"
+    >
       <span
-        class="flex items-center bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-4 md:inline-flex"
+        class="flex items-center bg-green-600 text-white md:px-8 md:py-4 md:inline-flex"
       >
         <alphabetical-variant-icon
           class="inline-block mr-2 transform -skew-y-6"
@@ -12,7 +14,9 @@
           Writing Training for English Learner
         </span>
       </span>
-      <signout />
+      <signout
+        class="block text-white text-sm mr-2 md:mr-0 md:text-base md:text-black md:px-8 md:py-4"
+      />
     </header>
     <main class="max-w-prose mx-5 mt-10 md:mt-16 md:mx-auto">
       <template v-if="!isLoading">
@@ -24,20 +28,23 @@
             v-for="pack in packages"
             :key="pack.id"
             :to="{ name: 'training-room', params: { id: pack.id } }"
-            class="border inline-block px-5 py-5 rounded hover:border-gray-300 text-lg font-semibold text-gray-700"
+            class="block rounded hover:border-gray-300 text-lg font-semibold text-gray-700"
           >
-            {{ pack.title }}
             <img
               v-if="pack.image"
-              class="mt-3 rounded-sm"
+              class="rounded-sm"
               :src="`${pack.image.url}?fit=crop&w=200&h=135`"
               :alt="pack.title"
               width="200"
               height="200"
+              loading="lazy"
             />
-            <p class="text-gray-600 text-xs font-light mt-2">
-              {{ pack.textSets.length }} sentenses
-            </p>
+            <span class="block px-3 py-3">
+              {{ pack.title }}
+              <span class="block text-gray-600 text-xs font-light mt-2">
+                {{ pack.textSets.length }} sentenses
+              </span>
+            </span>
           </router-link>
         </div>
       </template>

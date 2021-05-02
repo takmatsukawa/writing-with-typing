@@ -6,6 +6,8 @@ import "./index.css";
 
 import CheckCircleIcon from "vue3-material-design-icons/CheckCircle.vue";
 import AlphabeticalVariantIcon from "vue3-material-design-icons/AlphabeticalVariant.vue";
+import LogoutVariantIcon from "vue3-material-design-icons/LogoutVariant.vue";
+
 import Amplify, { Auth } from "aws-amplify";
 // @ts-ignore
 import awsconfig from "./aws-exports";
@@ -18,5 +20,6 @@ app.use(router);
 app.component("Markdown", Markdown);
 app.component("CheckCircleIcon", CheckCircleIcon);
 app.component("AlphabeticalVariantIcon", AlphabeticalVariantIcon);
+app.component("LogoutVariantIcon", LogoutVariantIcon);
 
 app.mount("#app");

@@ -1,5 +1,8 @@
 <template>
-  <a href="#" class="block px-8 py-4" @click.prevent="signout">SIGN OUT</a>
+  <a href="#" @click.prevent="signout">
+    <span class="hidden md:inline">SIGN OUT</span>
+    <logout-variant-icon class="md:hidden" title="sign out" />
+  </a>
 </template>
 
 <script lang="ts">
