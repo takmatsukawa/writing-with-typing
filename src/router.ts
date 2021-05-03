@@ -3,6 +3,7 @@ import { Auth } from "aws-amplify";
 import Login from "./components/Login.vue";
 import Index from "./components/Index.vue";
 import TrainingRoom from "./components/TrainingRoom.vue";
+import Test from "./components/Test.vue";
 
 const routes = [
   {
@@ -26,6 +27,14 @@ const routes = [
     component: TrainingRoom,
     name: "training-room",
     props: true,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/test",
+    component: Test,
+    name: "test",
     meta: {
       requiresAuth: true,
     },
