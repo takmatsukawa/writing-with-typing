@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "npm run format && npm t && vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "serve": "vite preview",
     "deploy": "vite build && ./deploy.sh",
-    "format": "prettier --write .",
-    "test": "jest"
+    "test": "vue-tsc --noEmit && jest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.0",
@@ -26,7 +26,9 @@
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "^10.2.5",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
     "postcss": "^8.2.9",
     "prettier": "2.2.1",
     "tailwindcss": "^2.1.1",
@@ -35,5 +37,8 @@
     "vite": "^2.1.5",
     "vite-plugin-fonts": "^0.2.2",
     "vue-tsc": "^0.0.15"
+  },
+  "lint-staged": {
+    "*.{js,css,md,ts,vue}": "prettier --write"
   }
 }
