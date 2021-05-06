@@ -39,6 +39,6 @@
     "vue-tsc": "^0.0.15"
   },
   "lint-staged": {
-    "*.{js,css,md,ts,vue}": "prettier --write"
+    "*.{js,css,html,md,ts,vue}": "prettier --write"
   }
 }
