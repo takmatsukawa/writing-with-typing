@@ -24,9 +24,7 @@
           There is no package!
         </p>
 
-        <router-link
-          class="hidden bg-gray-600 text-white text-center w-full rounded py-4 text-lg hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-600 focus:ring-opacity-50"
-          :to="{ name: 'test' }"
+        <router-link class="button button--gray block" :to="{ name: 'test' }"
           >Start Test</router-link
         >
 

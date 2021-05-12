@@ -9,40 +9,11 @@
         <p v-if="!pack.textSets.length" class="text-gray-800">
           This package is empty.
         </p>
-        <section
-          v-for="(textSet, i) in pack.textSets"
+        <writing
+          v-for="textSet in pack.textSets"
           :key="textSet.id"
-          class="relative"
-        >
-          <span
-            v-if="textSet.confident"
-            class="hidden bg-red-500 text-white text-xs px-1 rounded-sm font-semibold absolute md:inline"
-            style="margin-top: 5px; margin-left: -100px"
-            >Confident!</span
-          >
-          <span
-            v-if="textSet.confident"
-            class="inline-block mb-2 bg-red-500 text-white text-xs px-1 rounded-sm font-semibold md:hidden"
-            >Confident!</span
-          >
-
-          <answer-text
-            :answer="textSet.target"
-            :input="inputs[i] ? inputs[i] : ''"
-          ></answer-text>
-          <div v-html="textSet.native" class="text-gray-800 mt-5 prose" />
-          <textarea
-            :ref="
-              (el) => {
-                // @ts-ignore
-                if (el) textareas[i] = el;
-              }
-            "
-            v-model="inputs[i]"
-            :style="{ height: heights[i] }"
-            class="mt-2 px-2 py-1 shadow-sm block w-full border border-gray-300 rounded-md focus:outline-none focus:ring sm:text-sm"
-          ></textarea>
-        </section>
+          :textSet="textSet"
+        />
       </div>
     </template>
   </main>
@@ -51,7 +22,7 @@
 <script lang="ts">
 import { defineComponent, ref, computed, nextTick, onMounted } from "vue";
 import { useTextSets } from "../composables/useTextSets";
-import AnswerText from "../components/AnswerText.vue";
+import Writing from "./writing/Writing.vue";
 
 export default defineComponent({
   props: {
@@ -65,39 +36,11 @@ export default defineComponent({
     onMounted(getPackages);
     const pack = computed(() => packages.value.find((pack) => pack.id == id));
 
-    const inputs = ref<string[]>([]);
-
-    const textareas = ref<Element[]>([]);
-    const heights = ref<string[]>([]);
-
-    const resize = () => {
-      textareas.value.forEach((textarea, i) => {
-        heights.value[i] = "auto";
-        nextTick(() => {
-          heights.value[i] = textarea.scrollHeight + "px";
-        });
-      });
-    };
-
     return {
       pack,
-      inputs,
-      heights,
-      textareas,
-      resize,
     };
   },
-  watch: {
-    inputs: {
-      handler(val) {
-        this.resize();
-      },
-      deep: true,
-    },
-  },
-  components: {
-    AnswerText,
-  },
+  components: { Writing },
 });
 </script>
 

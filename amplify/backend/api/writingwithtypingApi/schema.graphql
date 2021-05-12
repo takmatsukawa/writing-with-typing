@@ -1,0 +1,10 @@
+
+
+type Log
+ @model
+ {
+  userId: ID!
+  textSetId: ID!
+  model: [Float!]!
+  updatedAt: AWSDateTime!
+}

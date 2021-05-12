@@ -3,7 +3,7 @@ import { Auth } from "aws-amplify";
 import { get } from "../fetch";
 const yamls = import.meta.globEager("../../packages/*.yaml");
 
-type Package = {
+export type Package = {
   id: string;
   title: string;
   image:
@@ -14,9 +14,8 @@ type Package = {
   textSets: TextSet[];
 };
 
-type TextSet = {
+export type TextSet = {
   id: string;
-  confident?: boolean;
   native: string;
   target: string;
 };
