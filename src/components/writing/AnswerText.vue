@@ -20,7 +20,7 @@ export default defineComponent({
       required: true,
     },
     answerTextOpacity: {
-      type: Number,
+      type: Number as () => 0 | 10,
       default: 10,
     },
   },
@@ -38,7 +38,13 @@ export default defineComponent({
   render() {
     return h(
       "p",
-      { class: "text-black text-opacity-" + this.answerTextOpacity },
+      {
+        class: [
+          "text-black",
+          this.answerTextOpacity == 0 && "text-opacity-0",
+          this.answerTextOpacity == 10 && "text-opacity-10",
+        ],
+      },
       [
         ...this.wordList.map((word, i) => {
           const input = this.inputWordList[i];
